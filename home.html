@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <title>Business Impact Analysis Tool</title>
+    <!--link rel="stylesheet" href="styles/style.css"-->
+    <link rel="stylesheet" href="pico-1.5.10/css/pico.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .table-container {
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+        .chart-container {
+          display: inline-block;
+          margin: 10px;
+          width: 600px;
+        }
+        .cont {
+          background-color: #EBEBEB;
+          font-size: 48px;
+        }
+      </style>
+    <script src="home.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <h1 align="center">Overview</h1>
+    <p><mark>This tool helps IT Management Team analyze business impacts and of identified cyber threats and prioritize them. Please follow the instruction to continue. </mark></p>
+    
+    <h4>Step 1</h4>
+    <div class="cont">
+      <p>Please input threat secenarios, with each item separated by ';'. </p>
+      <input type="text" id="ts" placeholder="threat1;threat2;threat3" />
+      <button onclick="IdentifyCIA()">Identify C-I-A classification </button>
+    
+      <div id="tableContainer" ></div>
+    </div>
+    <button onclick="forAnalyze()">Continue to Analyze</button>
+    <div class="cont" id="overallTrend"><p><mark>Persistent Loss Trend Visualization</mark></p></div>
+    <div class="cont" id="overallTangible"><p><mark>Tangible and Intangible Loss Visualization</mark></p></div>
+    <div class="cont" id="prioritization"><p><mark>Threat Prioritization by Impact Loss and Emergency</mark></p></div>
+    <div class="cont" id="eachThreat"><p><mark>Individual Threat Loss Composition</mark></p></div>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <title>BIA</title>
+    <!--link rel="stylesheet" href="styles/style.css"-->
+    <link rel="stylesheet" href="pico-1.5.10/css/pico.min.css">
+    <script src="input.js"></script>
+    <style>
+      .inline {
+          display: inline-block;
+          margin-right: 10px;
+      }
+      .cont {
+        background-color: #EBEBEB;
+      }
+  </style>
+  </head>
+  <body>
+    <h1 align = "center">Input Page</h1>
+    <h6>Threat Name: <div id="threatname"></div></h6>
+    <p>In this page, please input currency, MTPD of this threat scenario, and esitmated loss of each business impact.</p>
+    <div>
+        <h6>Currency choice </h6>
+        <select id="Currency">
+            <option value="">Please select</option>
+            <option value="USD">USD</option>
+            <option value="CHF">CHF</option>
+            <option value="EUR">EUR</option>
+        </select>
+    </div>
+    <div>
+        <h6>Maximum Tolerable Period of Disruption: </h6> <input type="text" id="mtpd"> <p> days </p>
+    </div>
+    <div>
+        <h5>One-time BI Parameters</h5>
+        <p>These business impacts are classified as one-time impacts, whiich means they will be counted once during the analysis.</p>
+        <div class="cont" id="one-timeContainer"></div>
+    </div>
+    <div>
+        <h5>Persistent BI Parameters</h5>
+        <p>These business impacts are classfied as persistent impacts, which means they will keep influencing the revenues for a while. For these impacts, please also provide corresponding recovery plan of them.</p>
+        <div class="cont" id="persistentContainer"></div>
+        
+          
+    </div>
+    <button onclick="save()">Save</button></br>
+    <button onclick="back2home()">Back</button></br>
+  </body>
+</html>

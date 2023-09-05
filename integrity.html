@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <title>BIA</title>
+    <!--link rel="stylesheet" href="styles/style.css"-->
+    <link rel="stylesheet" href="pico-1.5.10/css/pico.min.css">
+    <script src="threatProfile.js"></script>
+    <style>
+        .inline {
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .cont {
+          background-color: #EBEBEB;
+        }
+    </style>
+  </head>
+  <body>
+    <h1 align="center">Threat Scenario Profile</h1>
+    <div class="cont">
+      <p>Threat name: </p> <div id="threatName"> </div>
+      <p>Threat Category: <mark>Integrity</mark> </p>
+    </div>
+
+    
+      <h3>BI Parameters</h3>
+      <p>For the threat affecting data integrity, following business impacts may be triggered.</p>
+      <h5><em data-tooltip="Direct impacts that this threat causes">Tangible BI</em></h5>
+      <div class="cont" id="tangibleCheckboxContainer">
+        <input type="checkbox" id="damage"/>
+        <label for="damage"><em data-tooltip="Required recovery fee">Damages to critical components.</em></label></br>
+        <input type="checkbox" id="qualDeg"/>
+        <label for="qualDeg"><em data-tooltip="Resource waste and sale loss of invalid products or services">Quality degradation of products.</em></label></br>
+        <input type="checkbox" id="vioStandard"/>
+        <label for="vioStandard"><em data-tooltip="Regulatory compliance /penalty">Violation of standards and regulations in safety and pollution.</em></label></br>
+        <input type="checkbox" id="vioInt"/>
+        <label for="vioInt"><em data-tooltip="Estimated penalty">Violation of commercial agreements with customers on product specifications.</em></label></br>
+        <input type="checkbox" id="ti"/>
+        <label for="ti"><em data-tooltip="The costs associated with technical investigations are direct expenses for analysis to determine what happened during a cyber incident and who was responsible.">Technical Investigation.</em></label></br>
+        <input type="checkbox" id="ci"/>
+        <label for="ci"><em data-tooltip="Direct expenses for technical improvements to the infrastructure, security controls, monitoring capabilities, or surrounding processes.">Cybersecurity Improvements.</em></label></br>
+      </div>
+    
+
+    
+        <h5><em data-tooltip="Indirect impacts that this threat causes">Intangible BI</em></h5>
+        <div class="cont" id="intangibleCheckboxContainer">
+            <input type="checkbox" id="insurance"/>
+            <label for="insurance"><em data-tooltip="Additional costs an insured entity might incur to purchase
+            or renew cyber risk insurance policies ">Insurance premium increases.</em> </label></br>
+            <input type="checkbox" id="lc"/>
+            <label for="lc"><em data-tooltip="Lost future opportunity associated with contracts that are terminated as a result of a cyber incident">Future lost contract revenue.</em></label></br>
+            <input type="checkbox" id="lr"/>
+            <label for="lr"><em data-tooltip="How much the business must invest to acquire that customer or member">Lost value of customer relationships.</em></label></br>
+        </div>
+    
+
+    <h5><em data-tooltip="You may add other applicable business impact here">Customized BI</em></h5>
+    <b>Hint: one-time impacts will be counted once during the analysis, while persistent impacts keep for some time.</b>
+    <div class="cont" id="newBIContainer">
+      <input type="text" id="BIInput"/>
+      <select class="inline" id="tanAttribute">
+        <option value="tan">Tangible Impact</option>
+        <option value="intan">Intangible Impact</option>
+      </select>
+      <select id="timeAttribute">
+        <option value="onetime">One-time Impact</option>
+        <option value="per">Persistent Impact</option>
+      </select>
+      <button id="addBI" onclick="addNewBI()">OK</button>
+      <div id="newBI" class="cont"></div>
+    </div>
+
+    <button onclick="toInput()">Continue to Input Page</button>
+    
+  </body>
+</html>

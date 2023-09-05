@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <title>BIA</title>
+    <!--link rel="stylesheet" href="styles/style.css"-->
+    <link rel="stylesheet" href="pico-1.5.10/css/pico.min.css">
+    <script src="threatProfile.js"></script>
+    <style>
+        .inline {
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .cont {
+          background-color: #EBEBEB;
+        }
+    </style>
+  </head>
+  <body>
+    <h1 align="center">Threat Scenario Profile</h1>
+    <div class="cont">
+      <p>Threat name: </p> <div id="threatName"> </div>
+      <p>Threat Category: <mark>Confidentiality</mark> </p>
+    </div>
+
+    
+      <h3>BI Parameters</h3>
+      <p>For the threat affecting data confidentiality, following business impacts may be triggered.</p>
+      <h5><em data-tooltip="Direct impacts that this threat causes">Tangible BI</em></h5>
+      <div class="cont" id="tangibleCheckboxContainer">
+        <input type="checkbox" id="vioCon"/>
+        <label for="vioCon"><em data-tooltip="Estimated penalty">Violation of commercial agreements with industrial partners on data confidentiality.</em></label></br>
+        <input type="checkbox" id="breachNot"/>
+        <label for="breachNot"><em data-tooltip="Direct expenses associated with informing and advising individuals whose data has been compromised, can include printing, mailing, and call center services">Customer breach notification.</em></label></br>
+        <input type="checkbox" id="postPro"/>
+        <label for="postPro"><em data-tooltip="Direct cost of credit monitoring or identify theft protection services">Post-customer breach protection.</em></label></br>
+        <input type="checkbox" id="lostIP"/>
+        <label for="lostIP"><em data-tooltip="Attorney fees and litigation">Theft of Intellectual Property (IP).</em></label></br>
+        <input type="checkbox" id="pucRe"/>
+        <label for="pucRe"><em data-tooltip="Direct costs associated with managing external communications or brand monitoring following an incident">Public relation.</em></label></br>
+        <input type="checkbox" id="conPenalty"/>
+        <label for="conPenalty"><em data-tooltip="Penalty">Violation of standards and regulations in privacy or data protection (regulatory compliance/penalty).</em></label></br>
+        <input type="checkbox" id="ti"/>  
+        <label for="ti"><em data-tooltip="The costs associated with technical investigations are direct expenses for analysis to determine what happened during a cyber incident and who was responsible.">Technical Investigation.</em></label></br>
+        <input type="checkbox" id="ci"/>
+        <label for="ci"><em data-tooltip="Direct expenses for technical improvements to the infrastructure, security controls, monitoring capabilities, or surrounding processes.">Cybersecurity Improvements.</em></label></br>
+      </div>
+      <h5><em data-tooltip="Indirect impacts that this threat causes">Intangible BI</em></h5>
+      <div class="cont" id="intangibleCheckboxContainer">
+        <input type="checkbox" id="debt"/>
+        <label for="debt"><em data-tooltip="Possible higher interest rates for borrowed capital, either when raising debt or when renegotiating existing debt as a result of a drop in credit rating">Increased cost to raise debt.</em></label></br>
+        <input type="checkbox" id="insurance"/>
+        <label for="insurance"><em data-tooltip="Additional costs an insured entity might incur to purchase
+            or renew cyber risk insurance policies ">Insurance premium increases.</em> </label></br>
+        <input type="checkbox" id="lc"/>
+        <label for="lc"><em data-tooltip="Lost future opportunity associated with contracts that are terminated as a result of a cyber incident">Future lost contract revenue.</em></label></br>
+        <input type="checkbox" id="lr"/>
+        <label for="lr"><em data-tooltip="How much the business must invest to acquire that customer or member">Lost value of customer relationships.</em></label></br>
+      </div>
+    
+    <h5><em data-tooltip="You may add other applicable business impact here">Customized BI</em></h5>
+    <b>Hint: one-time impacts will be counted once during the analysis, while persistent impacts keep for some time.</b>
+    <div class="cont" id="newBIContainer">
+      <input type="text" id="BIInput"/>
+      <select class="inline" id="tanAttribute">
+        <option value="tan">Tangible Impact</option>
+        <option value="intan">Intangible Impact</option>
+      </select>
+      <select id="timeAttribute">
+        <option value="onetime">One-time Impact</option>
+        <option value="per">Persistent Impact</option>
+      </select>
+      <button id="addBI" onclick="addNewBI()">OK</button>
+      <div id="newBI" class="cont"></div>
+    </div>
+
+    <button onclick="toInput()">Continue to Input Page</button>
+    
+  </body>
+</html>
